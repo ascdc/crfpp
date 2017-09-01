@@ -13,7 +13,8 @@ RUN DEBIAN_FRONTEND=noninteractive && \
 RUN DEBIAN_FRONTEND=noninteractive && apt-get update && \
 	apt-get -y upgrade && \
 	git clone https://github.com/taku910/crfpp.git /crfpp && \
-	./configure && \
+	cd /crfpp && \
+	/crfpp/configure && \
 	make && \
 	make install
 
