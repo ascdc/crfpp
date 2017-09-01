@@ -15,6 +15,8 @@ RUN DEBIAN_FRONTEND=noninteractive && apt-get update && \
 	git clone https://github.com/taku910/crfpp.git /crfpp && \
 	cd /crfpp && \
 	./configure && \
+	sed -i '/#include "winmain.h"/d' crf_test.cpp && \
+	sed -i '/#include "winmain.h"/d' crf_learn.cpp && \
 	make && \
 	make install
 
